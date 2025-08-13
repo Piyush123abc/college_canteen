@@ -1,0 +1,20 @@
+# Ignore virtual environment
+venv_d_p1/
+
+# Python cache and bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Django specific
+*.sqlite3
+db.sqlite3
+*.log
+
+# IDE/editor settings
+.vscode/
+.idea/
+
+# Migrations (ignore all but keep __init__.py so Django still treats it as a package)
+*/migrations/[0-9][0-9]*.py
+*/migrations/__pycache__/
