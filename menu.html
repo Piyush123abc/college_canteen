@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>College Canteen - Menu</title>
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+  <header>
+    <h1>College Canteen</h1>
+    <div class="header-right">
+      <span id="user-name"></span>
+      <button id="logout-btn">Logout</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Student Panel -->
+    <section class="menu-section">
+      <h2>Menu</h2>
+
+      <!-- 🔍 NEW: Filters -->
+      <div class="filter-controls">
+        <input type="text" id="search-box" placeholder="Search menu..." />
+        <select id="category-filter">
+          <option value="all">All Categories</option>
+          <option value="snacks">Snacks</option>
+          <option value="drinks">Drinks</option>
+          <option value="meals">Meals</option>
+        </select>
+      </div>
+
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="veg">Veg</button>
+        <button class="filter-btn" data-filter="nonveg">Non-Veg</button>
+      </div>
+
+      <div id="menu" class="menu-container"></div>
+    </section>
+
+    <section class="cart-section" id="student-cart">
+      <h2>Your Cart</h2>
+      <div id="cart" class="cart-container">
+        <p>Your cart is empty.</p>
+      </div>
+      <div class="cart-total">Total: ₹<span id="total-price">0.00</span></div>
+      <button id="checkout-btn" disabled>Checkout</button>
+    </section>
+
+    <!-- 👨‍🍳 NEW: Chef Panel -->
+    <section id="chef-panel" style="display:none;">
+      <h2>Chef Panel</h2>
+
+      <div class="add-menu-form">
+        <h3>Add Menu Item</h3>
+        <input type="text" id="new-item-name" placeholder="Item Name" />
+        <input type="text" id="new-item-desc" placeholder="Description" />
+        <input type="number" id="new-item-price" placeholder="Price" />
+        <select id="new-item-type">
+          <option value="veg">Veg</option>
+          <option value="nonveg">Non-Veg</option>
+        </select>
+        <select id="new-item-category">
+          <option value="snacks">Snacks</option>
+          <option value="drinks">Drinks</option>
+          <option value="meals">Meals</option>
+        </select>
+        <button id="add-item-btn">Add Item</button>
+      </div>
+
+      <div class="orders-section">
+        <h3>Latest Orders</h3>
+        <div id="orders-list"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 College Canteen. All rights reserved.
+  </footer>
+
+  <script src="menu.js"></script>
+</body>
+</html>
